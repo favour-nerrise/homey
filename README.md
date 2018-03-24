@@ -1,3 +1,4 @@
+<< IN TERMINAL >>
 
 Files to run to set up database (in order):
 
@@ -8,3 +9,5 @@ node scripts/crime.js
 node scripts/walkscores2.js
 node scripts/environment.js
 ```
+
+To run app: npm start
