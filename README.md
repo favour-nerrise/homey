@@ -10,5 +10,4 @@ node scripts/crime.js
 node scripts/walkscores2.js
 node scripts/environment.js
 ```
-
-3. Run app: npm start
+3. Run app: node app.js
