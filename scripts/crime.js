@@ -1,10 +1,9 @@
-
-var mongoose = require("mongoose");
-var promisify = require("../helpers/promisify");
-var fs = require("fs");
-var path = require("path");
-var parse = require("csv-parse");
-var bluebird = require("bluebird")
+const mongoose = require("mongoose");
+const promisify = require("promisify");
+const fs = require("fs");
+const path = require("path");
+const parse = require("csv-parse");
+const bluebird = require("bluebird")
 
 mongoose.Promise = bluebird;
 mongoose.connect("mongodb://localhost/homey", {useMongoClient: true});
@@ -12,7 +11,7 @@ mongoose.connection.on('error', console.error.bind(console, 'connection error:')
 mongoose.connection.once('open', function(){
 
   require("../models")();
-  var Hood = mongoose.model("Hood");
+  let Hood = mongoose.model("Hood");
 
   function get_neighbourhood_if_exists(nid){
     return promisify.m(Hood, 'find', {nid: nid})
@@ -30,8 +29,8 @@ mongoose.connection.once('open', function(){
     })
     .then((csv) => {
       return Promise.all(csv.map((hood) => {
-        var nid = hood[1];
-        var crimes = hood[14];
+        let nid = hood[1];
+        let crimes = hood[14];
         return get_neighbourhood_if_exists(nid)
           .then((hood) => {
             hood.scores.push({category: "crime", value: crimes});

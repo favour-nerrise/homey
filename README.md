@@ -10,4 +10,4 @@ node scripts/walkscores2.js
 node scripts/environment.js
 ```
 
-To run app: npm start
+To run app: node app.js
