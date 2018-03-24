@@ -92,12 +92,12 @@ function computeTopNeighbourhood(workLat, workLon, req, res){
       }));
     });
 
-    var maxMap = _.object(keys, values);
+    let maxMap = _.object(keys, values);
 
-    for (var i = 0; i < result.length; i++){
-      var hoodLat = result[i].centroid.x;
-      var hoodLon = result[i].centroid.y;
-      var hoodName = result[i].title;
+    for (let i = 0; i < result.length; i++){
+      let hoodLat = result[i].centroid.x;
+      let hoodLon = result[i].centroid.y;
+      let hoodName = result[i].title;
 
       hoods[i] = {title: hoodName,
                   geometry: result[i].geometry,
@@ -107,13 +107,15 @@ function computeTopNeighbourhood(workLat, workLon, req, res){
                   dist: geoLib.getDistance({latitude: workLat, longitude: workLon},{latitude: hoodLat, longitude: hoodLon})
                 };
     };
-    hoods.sort(function(a,b){return a.dist - b.dist });
+    hoods.sort(function(a,b) {
+      return a.dist - b.dist
+    });
 
-    var factors = getFactors(req.body);
+    let factors = getFactors(req.body);
 
     hoods = hoods.map((hood) => {
       hood.score = hood.scores.reduce((prev, curr) => {
-        var value = curr.value / maxMap[curr.category];
+        let value = curr.value / maxMap[curr.category];
         if (factors[curr.category] < 0) {
           value = (maxMap[curr.category] - curr.value) / maxMap[curr.category];
         }
@@ -123,15 +125,15 @@ function computeTopNeighbourhood(workLat, workLon, req, res){
     });
 
     // Make this only run for 5 hoods
-    var promises = hoods.slice(0,20).map(function(hood){
+    let promises = hoods.slice(0,20).map(function(hood){
       return Promise.all([Promise.resolve(hood), ""]);
     });
 
     return Promise.all(promises)
   })
   .then(function(value) {
-    var hoods = value.map(function(obj){
-      var hood = obj[0];
+    let hoods = value.map(function(obj){
+      let hood = obj[0];
       hood['timeToWork'] = hood['dist'];
       return hood;
     })

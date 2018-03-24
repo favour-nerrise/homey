@@ -19,7 +19,7 @@ mongoose.connection.once('open', function(){
     return promisify.m(Hood, 'find', {nid: nid})
       .then(function(results){
         if (results.length === 0) {
-          throw "Ayy, lmboo neighbourhood doesn't exist";
+          throw "This neighbourhood doesn't exist";
         }
         return Promise.resolve(results[0]);
       })
