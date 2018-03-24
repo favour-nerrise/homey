@@ -1,0 +1,77 @@
+{
+	"id": "1caa2e7f-0e10-9214-6076-9ee4cfb4ffd7",
+	"name": "homey API",
+	"description": "API calls for homey.",
+	"order": [
+		"e8719103-6fa1-d377-4041-f8e4560ea0e1"
+	],
+	"folders": [],
+	"timestamp": 1456000047256,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "e8719103-6fa1-d377-4041-f8e4560ea0e1",
+			"headers": "",
+			"url": "localhost:3000/api/registerUser",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "age",
+					"value": "19",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "minBudget",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "maxBudget",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "officeLocation",
+					"value": "m1w3t1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "household_children",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "household_adults",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "transportation",
+					"value": "car",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1456020968338,
+			"name": "Register a User",
+			"description": "Register a user",
+			"collectionId": "1caa2e7f-0e10-9214-6076-9ee4cfb4ffd7",
+			"responses": []
+		}
+	]
+}

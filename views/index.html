@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<title>Homey | home</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/index-style.css">
+</head>
+<body>
+	<div class="navbar navbar-custom navbar-fixed-top">
+		<div class="navbar-header">
+			<!-- <a class="navbar-brand" href="/"><img src="/images/homey2transparent.png" height="50px" ></a> -->
+			<a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#yourcity">Start</a></li>
+				<li><a href="#aboutUs">About</a></li>
+				<li>&nbsp;</li>
+			</ul>
+
+		</div>
+	</div>
+
+	<div class="container-full-bg" style="background-image:url('/images/thesix.jpg');">
+		<div class="container special text-center">
+			<div class="jumbotron">
+				<h1>Welcome home.</h1>
+			</div>
+			<a href="#yourcity"><button>Let's Start</button></a>
+		</div>
+	</div>
+
+	<div class="container-fluid text-center">
+		<div class="row content">
+			<div class="col-sm-12 text-center" id="yourcity">
+				<h2>Find your perfect neighbourhood!</h2>
+			</div>
+		</div>
+
+		<div class="col-sm-2 sidenav"></div>
+		<div class="col-sm-8 text-left">
+			<form class="form-horizontal" role="form">
+				<center><h4>Personal Information</h4></center>
+				<br>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="user">Age:</label>
+					<div class="col-sm-6">
+						<input type="number" class="form-control" id="age" name="age" placeholder="Enter your age in years.">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="officeLocation">Job Location:</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="officeLocation" name="officeLocation" placeholder="(e.g. 15 Bay St., Toronto, Ontario)">
+					</div>
+				</div>
+				<br>
+				<center><h4>Household Information</h4></center>
+				<br>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="adults">Number of Adults:</label>
+					<div class="col-sm-6">
+						<select class="form-control" id="adults" name="adults">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4+</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="children">Number of Children Under 18:</label>
+					<div class="col-sm-6">
+						<select class="form-control" id="children" name="children">
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6+</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="transporation">Preferred Method of Transportation</label>
+					<div class="col-sm-6">
+						<select class="form-control" id="transportation" name="transportation">
+							<option value="car">Car</option>
+							<option value="transit">Public Transit</option>
+							<option value="bike">Bicycle</option>
+							<option value="walk">Walking</option>
+							<option value="other">Other</option>
+						</select>
+					</div>
+				</div>
+				<!-- <br>
+				<h4>Budget</h4>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="trav">Minimum</label>
+					<div class="col-sm-5">
+						<select class="form-control" id="minBudget" name="minBudget">
+							<option value="1000">$1,000</option>
+							<option value="200000">$200,000</option>
+							<option value="250000">$250,000</option>
+							<option value="300000">$300,000</option>
+							<option value="350000">$350,000</option>
+							<option value="400000">$400,000</option>
+							<option value="450000">$450,000</option>
+							<option value="500000">$500,000</option>
+							<option value="550000">$550,000</option>
+							<option value="600000">$600,000</option>
+							<option value="650000">$650,000</option>
+							<option value="700000">$700,000</option>
+							<option value="750000">$750,000</option>
+							<option value="800000">$800,000</option>
+							<option value="850000">$850,000</option>
+							<option value="900000">$900,000</option>
+							<option value="950000">$950,000</option>
+							<option value="1000000">$1,000,000</option>
+							<option value="1500000">$1,500,000</option>
+							<option value="2000000">$2,000,000+</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="maxBudget">Maximum</label>
+					<div class="col-sm-5">
+						<select class="form-control" id="maxBudget" name="maxBudget">
+							<option value="200000">$200,000</option>
+							<option value="250000">$250,000</option>
+							<option value="300000">$300,000</option>
+							<option value="350000">$350,000</option>
+							<option value="400000">$400,000</option>
+							<option value="450000">$450,000</option>
+							<option value="500000">$500,000</option>
+							<option value="550000">$550,000</option>
+							<option value="600000">$600,000</option>
+							<option value="650000">$650,000</option>
+							<option value="700000">$700,000</option>
+							<option value="750000">$750,000</option>
+							<option value="800000">$800,000</option>
+							<option value="850000">$850,000</option>
+							<option value="900000">$900,000</option>
+							<option value="950000">$950,000</option>
+							<option value="1000000">$1,000,000</option>
+							<option value="1500000">$1,500,000</option>
+							<option value="2000000">$2,000,000+</option>
+						</select>
+					</div>
+				</div>
+				<br> -->
+				<div class="form-group">
+					<div class="col-sm-offset-5 col-sm-2">
+						<form action="/api/registerUser" method="post">
+							<button type="submit" formmethod="post" formaction="/api/registerUser">Submit</button>
+						</form>
+					</div>
+				</div>
+				<br>
+			</form>
+		</div>
+
+		<div class="row content">
+			<div class="col-sm-12 text-center" id="aboutTitle">
+				<h2>About</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-justify">
+				<div class="About Us" id="aboutUs">
+				<br>
+					<p>Moving to another city is no easy feat. In a city of unfamiliar neighbourhoods, it's tough to find the optimal region to live in without interviewing to countless people and making numerous countless trips to the area. At Homey, we're passionate about giving you the right decision-making tools to truly settle down.</p>
+
+					<p>
+					The data used by Homey is gathered from open data sources such as the <a href="http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=1a66e03bb8d1e310VgnVCM10000071d60f89RCRD" target="_blank">City of Toronto Open Data Catalogue</a> as well as data from <a href="https://www.walkscore.com/">Walkscore.com</a>.
+					</p>
+
+					<p>
+					Homey was designed and created by Reggie, Bryce, Favour, Derek, and Azeez at <a href="
+					http://github.com/favour-nerrise/homey" target="_blank">NSBE44 Hackathon</a></a>.
+					</p>
+				<br>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer class="container-fluid text-center">
+		<p>
+			Made with <i class="fa fa-heart" aria-hidden="true"></i>
+			<br>
+			2018
+		</p>
+	</footer>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
+	</script>
+	<script src="https://use.fontawesome.com/faf72e3fde.js"></script>
+</body>
+</html>
