@@ -1,6 +1,5 @@
-
-var request = require("request");
-var promisify = require("../helpers/promisify");
+const request = require("request");
+const promisify = require("promisify");
 
 promisify.f(request, "http://services5.arcgis.com/1jrn63iFisouJg45/arcgis/rest/services/Enriched%20neighbourhoods_planning_areas_wgs84/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryPolygon&geohash=&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Meter&outFields=AREA_NAME&returnGeometry=true&returnCentroid=true&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnDistinctValues=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&quantizationParameters=&f=json&token=RqbKxwz2lPYz9eBAQpd-M16YBivSXCVpC6dH8FcJpQVhdXCsIw_eETmDr5Xys6-OxCwKgnSditK30_gLin-Fpp5bFwEBo2WgS6nlzb_fJuGSyB9yVf727F1nmNeg8w0Sldv6UtA-xTlKGiI1wetHNQ..")
   .then(function(response){
@@ -11,7 +10,7 @@ promisify.f(request, "http://services5.arcgis.com/1jrn63iFisouJg45/arcgis/rest/s
     //   }));
     // });
     console.log(JSON.stringify(body));
-    var polygons = {
+    let polygons = {
       geometries: body.features.map(function(feature){
         return feature.geometry;
       })
